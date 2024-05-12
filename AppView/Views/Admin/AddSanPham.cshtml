@@ -4,29 +4,33 @@
     ViewData["Title"] = "AddSanPham";
 }
 
-<h1>Thêm sản phẩm</h1>
+<h1 style="
+    text-align: center;
+">
+    Thêm sản phẩm
+</h1>
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="AddSanPham" enctype="multipart/form-data">
-            <div class="form-group">
-                <label asp-for="Ten" class="control-label"></label>
+    <div class="col-12">
+        <form class="row no-gutters ztree form-infor" style="padding: 0px !important; " asp-action="AddSanPham" enctype="multipart/form-data">
+            <div class="form-group col-xs-12 col-sm-6 p-1">
+                <label class="control-label">Tên sản phẩm</label>
                 <input asp-for="Ten" class="form-control" autocomplete="off" />
                 <span asp-validation-for="Ten" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MoTa" class="control-label"></label>
+            <div class="form-group col-xs-12 col-sm-6 p-1">
+                <label class="control-label">Mô tả</label>
                 <input asp-for="MoTa" class="form-control" autocomplete="off" />
                 <span asp-validation-for="MoTa" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-xs-12 col-sm-6 p-1">
                 <label class="control-label">Hãng</label>
                 <input asp-for="TenChatLieu" class="form-control" list="chatLieu" autocomplete="off"/>
                 <datalist id="chatLieu"></datalist>
                 <span asp-validation-for="TenChatLieu" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-xs-12 col-sm-6 p-1">
                 <label class="control-label">Màu sắc</label>
                 <table id="tbmausac" style="width:450px">
                     <tbody class="table" id="tbbody">
@@ -43,10 +47,12 @@
                         </tr>
                     </tbody>
                 </table>
-                <input type="button" class="form-control" value="+" onclick="themMauSac(this)" />
+                <input type="button" class="form-control" value="+" onclick="themMauSac(this)" style="
+    width: 450px;
+" />
                 <datalist id="mauSac"></datalist>
             </div>
-            <div class="form-group" id="lstKichCo">
+            <div class="form-group col-xs-12 col-sm-6 p-1" id="lstKichCo">
                 <label class="control-label">Kích cỡ</label>
                 <div class="row" style='width:450px' id="size0">
                     <div class="col-lg-10" style='padding-right:0px'>
@@ -56,9 +62,10 @@
                         <input type="button" class="form-control" value="-" hidden id="xoasize0" onclick="xoaSize(0)"/>
                     </div>
                 </div>
-                <input type="button" class="form-control" value="+" onclick="themKichCo(1,this)" />
+                <input type="button" class="form-control custom-width-450px" value="+" onclick="themKichCo(1,this)" style="width: 450px;"/>
             </div>
-            <datalist id="kichCo"></datalist>          
+            <datalist id="kichCo"></datalist>   
+            <hr />
             <div class="form-group">
                 <input type="submit" value="Thêm" class="btn btn-primary" />
             </div>
@@ -161,7 +168,7 @@
             <div class="col-lg-2" style='padding-left:0px'>
             <input type="button" class= "form-control" value="-" hidden id="xoasize${count}" onclick="xoaSize(${count})"/>
             </div>
-            </div><input type='button' class='form-control' onclick='themKichCo(${count + 1},this)' value='+' / > `);
+                </div><input type='button' class='form-control'style='width:450px' onclick='themKichCo(${count + 1},this)' value='+' / > `);
         document.getElementById("xoasize" + (count - 1)).hidden = false;
         element.remove();
     }

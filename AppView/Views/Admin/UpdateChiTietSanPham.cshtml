@@ -7,63 +7,50 @@
 <h1>Thêm chi tiết sản phẩm</h1>
 
 <form asp-action="UpdateChiTietSanPham" id="myForm">
-    <table class="table">
-        <thead>
+    <table class ="table table-bordered table-responsive table-hover result-point table-body-scroll" style="table-layout:fixed">
+        <thead class="point-table-head">
             <tr>
-                <th>
-                    Tên màu sắc
-                </th>
-                <th>
-                    Mã màu sắc
-                </th>
-                <th>
-                    Kích cõ
-                </th>
-                <th>
-                    Số lượng
-                </th>
-                <th>
-                    Giá bán
-                </th>
-                <th>
-                    Mặc định
-                </th>
-                <th>
-                </th>
-                <th>
-                </th>
-                <th>
-                </th>
+
+                <th style="width: 17%;">Tên màu sắc</th>
+                <th style="width: 40%" class="text-center"> Mã màu sắc</th>
+                <th style="width: 15%;" class="text-center"> Kích cõ</th>
+                <th style="width: 15%;" class="text-center">Số lượng</th>
+                <th style="width: 14%;" class="text-center">Giá bán</th>
+                <th style="width: 8%;" class="text-center">Mặc định</th>
+                <th></th>
+                <th></th>
+                <th></th>
+               
             </tr>
         </thead>
         <tbody>
             @for (var i = 0; i < Model.ChiTietSanPhams.Count; i++)
             {
                 <tr>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="text" asp-for="ChiTietSanPhams[i].TenMauSac" style="border:none;background-color:white" readonly>
-                    </td>
-                    <td>
+                    </td >
+                    <td style="text-align: center;">
                         <input type="color" value="@Model.ChiTietSanPhams[i].MaMau" style="border:none;width:27px;height:25px" readonly disabled>
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="text" asp-for="ChiTietSanPhams[i].TenKichCo" style="border:none;background-color:white" readonly>
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="number" asp-for="ChiTietSanPhams[i].SoLuong">
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="number" asp-for="ChiTietSanPhams[i].GiaBan">
-                    <td>
+                    <td style="text-align: center;">
                         <input type="radio" asp-for="TrangThai" value="@Model.ChiTietSanPhams[i].IDChiTietSanPham">
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="hidden" asp-for="ChiTietSanPhams[i].IDChiTietSanPham">
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="hidden" asp-for="ChiTietSanPhams[i].IDMauSac">
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <input type="hidden" asp-for="ChiTietSanPhams[i].IDKichCo">
                     </td>
                 </tr>

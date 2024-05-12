@@ -37,19 +37,19 @@
         @foreach (var item in Model.listNv)
         {
             <tr>
-                <td>@stt</td>
-                <td>@Html.DisplayFor(modelItem => item.Ten)</td>
-                <td>@Html.DisplayFor(modelItem => item.Ma)</td>
+                <td style="text-align: center;">@stt</td>
+                <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Ten)</td>
+                <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Ma)</td>
                 <td>
                     @if (item.TrangThai == 0)
                     {
                         <div style="color:red">
-                            <div style="color:red">Không hoạt động </div>
+                            <div style="color:red;text-align: center;">Không hoạt động </div>
                         </div>
                     }
                     else
                     {
-                        <div style="color:black">Hoạt động</div>
+                        <div style="color:black;text-align: center;">Hoạt động</div>
                     }
                 </td>
                 <td style="text-align:end">
