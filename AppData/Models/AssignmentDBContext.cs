@@ -31,7 +31,7 @@ namespace AppData.Models
         public DbSet<Anh> Anhs { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-P8BV7UB\SQLEXPRESS;Initial Catalog=1_DuAnTotNghiep_v1;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-UBD0I1G\SQLEXPRESS;Initial Catalog=1_DuAnTotNghiep_v1;Integrated Security=True");
         }    
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -203,9 +203,9 @@ namespace AppAPI.Controllers
         [Route("GetAllSPNoKMByLoaiSPChatLieu")]
         [HttpGet]
 
-        public List<AllViewSp> TKGetAllSPNoKmByLoaiSPChatLieu(Guid id, Guid? idLoaiSP, Guid? idChatLieu)
+        public List<AllViewSp> TKGetAllSPNoKmByLoaiSPChatLieu(Guid id, Guid? idChatLieu)
         {
-            if ( !_dbcontext.ChatLieus.Any(y => y.ID == idChatLieu)) throw new Exception($" khong tim thay san pham co id:{idLoaiSP},{idChatLieu}");
+            if ( !_dbcontext.ChatLieus.Any(y => y.ID == idChatLieu)) throw new Exception($" khong tim thay san pham co id:{idChatLieu}");
             //var AllCTSP = (from SP in _dbcontext.SanPhams.AsNoTracking()
             //               join anh in _dbcontext.Anhs.AsNoTracking() on SP.ID equals anh.IDSanPham
             //               join loaisp in _dbcontext.LoaiSPs.AsNoTracking() on SP.IDLoaiSP equals loaisp.ID
@@ -259,11 +259,7 @@ namespace AppAPI.Controllers
                                IDChatLieu = group.FirstOrDefault().sp_cl_lsp_ctsp.chatlieus.ID,
                                TrangThai = group.FirstOrDefault().sp_cl_lsp_ctsp.sp_cl.TrangThai
                            }).Where(x => x.IdKhuyenMai != id).ToList();
-            if (!string.IsNullOrEmpty(idLoaiSP.ToString()))
-            {
-                result = result.Where(x => x.IDLoaiSP == idLoaiSP).ToList();
-
-            }
+           
             if (!string.IsNullOrEmpty(idChatLieu.ToString()))
             {
                 result = result.Where(x => x.IDChatLieu == idChatLieu).ToList();

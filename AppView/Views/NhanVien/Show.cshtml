@@ -72,9 +72,7 @@
                     <button type="button" class="btn btn-success" onclick="return confirm('Bạn có muốn đổi trạng thái nhân viên @item.Ten sang trạng thái @(item.TrangThai == 1 ? "Nghỉ làm" : "Đang làm") không?');">
                         @Html.ActionLink("Sửa", "Sua", new { id = item.ID }, new { @style = "color:white;" })
                     </button>
-                    <button class="btn btn-success" style="text-align:end">
-                        @Html.ActionLink("Chi tiết", "Details", new { id= item.ID }, new { @style = "color:white;"})
-                    </button>
+                   
                 </td>
                 @{
                     stt++;

@@ -18,7 +18,7 @@
         <select name="idchatlieu" class="form-control" style="width:600px;height:40px">
             if (idchatlieu == null)
             {
-            <option value="">Chọn tên chất liệu</option>
+            <option value="">Chọn tên Hãng</option>
             }
             @foreach (var loaisp in Dbcontext.ChatLieus.ToList())
             {
@@ -53,10 +53,7 @@
             <th style=" background-color: darkslategray;
     color: white;">Giá bán</th>
             <th style=" background-color: darkslategray;
-    color: white;">Tên loại sản phẩm</th>
-
-            <th style=" background-color: darkslategray;
-    color: white;">Tên chất liệu</th>
+    color: white;">Tên hãng</th>
             <th style=" background-color: darkslategray;
     color: white;">Trạng thái</th>
             <th style=" background-color: darkslategray;
