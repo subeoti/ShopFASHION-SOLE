@@ -1919,6 +1919,10 @@ namespace AppView.Controllers
         {
             return View();
         }
+        public IActionResult VoucherMember()
+        {
+            return View();
+        }
         #endregion
     }
 }

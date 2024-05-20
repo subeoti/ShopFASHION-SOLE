@@ -3,10 +3,14 @@
 @{
     ViewData["Title"] = "Thêm ảnh";
 }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Then, include jQuery UI -->
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 
 <h1>Thêm ảnh chi tiết sản phẩm</h1>
 
-<form enctype="multipart/form-data" asp-action="AddAnhToSanPham">
+<form id="myForm" enctype="multipart/form-data" action="/Admin/AddAnhToSanPham" method="post">
     <table class="table">
         <thead>
             <tr>
@@ -40,3 +44,40 @@
     </table>
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        
+
+        var form = document.getElementById("myForm");
+        if (form) {
+           
+
+            form.addEventListener("submit", function (event) {
+               
+                event.preventDefault();
+
+                
+                fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form)
+                })
+                    .then(response => {
+                      
+                        if (response.ok) {
+                           
+                            window.location.href = "/Admin/ProductManager";
+                        } else {
+                            
+                            console.error("Form submission failed:", response.statusText);
+                        }
+                    })
+                    .catch(error => {
+                     
+                        console.error("Error submitting form:", error);
+                    });
+            });
+        } else {
+            console.error("Form element not found");
+        }
+    });
+</script>

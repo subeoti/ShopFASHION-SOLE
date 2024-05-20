@@ -26,8 +26,8 @@
     </div>
     <div id="searchErrorMessage" class="alert alert-warning" role="alert" style="display: @(ViewData["SearchError"] != null ? "block" : "none") ; margin-top: 10px; margin-left: 11px">@ViewData["SearchError"]</div>
 </div>
-<table class ="table table-bordered table-responsive table-hover result-point table-body-scroll" style="table-layout:fixed">
-    <thead class ="point-table-head">
+<table class="table table-bordered table-responsive table-hover result-point table-body-scroll" style="table-layout:fixed">
+    <thead class="point-table-head">
         <tr>
             <th style="width: 5%;">STT</th>
             <th style="width: 11%" class="text-center">Tên</th>
@@ -36,7 +36,8 @@
             <th style="width: 15%;" class="text-center">Địa chỉ</th>
             <th style="width: 9%;" class="text-center">Trạng Thái</th>
             <th style="width: 11%;" class="text-center">Vai Trò</th>
-            <th style="width: 10%;" class="text-center">Chức năng</th>
+            <th style="width: 22%;" class="text-center">Chức năng</th>
+            <th style="width: 10%;"></th>
         </tr>
     </thead>
     <tbody>
@@ -68,11 +69,11 @@
                         ;
                     }
                 </td>
-                <td style="text-align:end">
+                <td style="text-align:center">
                     <button type="button" class="btn btn-success" onclick="return confirm('Bạn có muốn đổi trạng thái nhân viên @item.Ten sang trạng thái @(item.TrangThai == 1 ? "Nghỉ làm" : "Đang làm") không?');">
                         @Html.ActionLink("Sửa", "Sua", new { id = item.ID }, new { @style = "color:white;" })
                     </button>
-                   
+
                 </td>
                 @{
                     stt++;

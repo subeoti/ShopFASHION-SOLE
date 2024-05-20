@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_Layout";
+}
+<table class="table table-bordered table-responsive table-hover result-point table-body-scroll" style="table-layout:fixed">
+    <thead class="point-table-head">
+        <tr>
+            <th style="width: 5%;">STT</th>
+            <th style="width: 10%" class="text-center">Mã Voucher</th>
+            <th style="width: 15%;" class="text-center">Ngày kết thúc</th>
+            <th style="width: 15%;" class="text-center">Trạng thái</th>
+            
+        </tr>
+    </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+<script>
+    $scope.TinhTienDoHD = function () {
+        showToast();
+        $.ajax({
+            type: 'POST',
+            url: '/Home/Voucher',
+            data: {  },
+            success: function (data) {
+               
+            }
+        })
+    }
+
+</script>

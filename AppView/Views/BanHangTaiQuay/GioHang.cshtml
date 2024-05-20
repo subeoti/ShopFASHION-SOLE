@@ -28,11 +28,6 @@
             <div class="search-bar">
                 @if (@Model.TenKhachHang == null)
                 {
-
-                    <form class="search-form d-flex align-items-center">
-                        <input type="text" name="search" autocomplete="off" style="outline: none;" id="searchkh" placeholder="Tìm kiếm khách hàng theo tên, SĐT">
-                        <button type="button" title="Thêm mới khách hàng" data-bs-toggle="modal" data-bs-target="#themkhachhang"><i class="fa-regular fa-plus" style="color: #a6a8ab;"></i></button>
-                    </form>
                     <div>
                         <ul class="list-group pt-2" id="result"></ul>
                     </div>
